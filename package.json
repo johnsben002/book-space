@@ -1,0 +1,11 @@
+{
+  "name": "book-space",
+  "version": "1.0.0",
+  "description": "place to store reviews of books and find new ones",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Johnson",
+  "license": "ISC"
+}
