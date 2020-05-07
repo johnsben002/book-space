@@ -22,7 +22,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist/"),
     publicPath: "/dist/",
-    filename: "bundle.js"
+    filename: "bundle.js",
+    sourceMapFilename: "bundle.js.map"
   },
   devServer: {
     contentBase: path.join(__dirname, "public/"),
@@ -30,5 +31,6 @@ module.exports = {
     publicPath: "http://localhost:3000/dist/",
     hotOnly: true
   },
+  devtool: "source-map",
   plugins: [new webpack.HotModuleReplacementPlugin()]
 };
