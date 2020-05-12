@@ -10,7 +10,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
-        options: { presets: ["@babel/env"] }
+        options: { presets: ["@babel/env", "@babel/preset-react"] }
       },
       {
         test: /\.css$/,
@@ -26,9 +26,12 @@ module.exports = {
     sourceMapFilename: "bundle.js.map"
   },
   devServer: {
-    contentBase: path.join(__dirname, "public/"),
-    port: 3000,
-    publicPath: "http://localhost:3000/dist/",
+    // contentBase: path.join(__dirname, "public/"),
+    // port: 3000,
+    publicPath: "http://localhost:8080/dist/",
+    proxy: {
+      '/': 'http://localhost:3000'
+    },
     hotOnly: true
   },
   devtool: "source-map",
